@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guardpost — Survive the Night | KAM Studio</title>
+<meta name="description" content="Guardpost — an atmospheric reverse tower defense game by KAM Studio. Aim your light. Defend the tower. Survive the night.">
+<meta property="og:title" content="Guardpost — Survive the Night">
+<meta property="og:description" content="Aim your light. Defend the tower. An atmospheric reverse tower defense game by KAM Studio.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kamstudiodev.github.io/guardpost/">
+<meta property="og:image" content="https://kamstudiodev.github.io/guardpost/keyart.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:#070b12;
+    --panel:#0d1420;
+    --beam:#f2c14e;
+    --beam-dim:#a8853a;
+    --parchment:#d8d3c5;
+    --muted:#7d8494;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--night);
+    color:var(--parchment);
+    font-family:"Cormorant Garamond",Georgia,serif;
+    font-size:19px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--beam);text-decoration:none}
+  a:hover{text-decoration:underline}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--beam);outline-offset:3px;border-radius:2px}
+
+  /* ---- hero ---- */
+  .hero{position:relative;overflow:hidden}
+  .hero img{
+    display:block;width:100%;max-height:62vh;object-fit:cover;object-position:center;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(to bottom, rgba(7,11,18,.15) 0%, rgba(7,11,18,0) 35%, rgba(7,11,18,.55) 75%, var(--night) 100%);
+    pointer-events:none;
+  }
+
+  /* ---- content ---- */
+  .wrap{max-width:640px;margin:0 auto;padding:0 24px 72px;text-align:center}
+  .eyebrow{
+    margin-top:40px;
+    font-size:12px;letter-spacing:.42em;text-transform:uppercase;
+    color:var(--muted);font-family:Georgia,serif;
+  }
+  h1{
+    margin-top:14px;
+    font-weight:500;
+    font-size:clamp(44px,9vw,76px);
+    letter-spacing:.28em;
+    text-indent:.28em; /* optically re-centers the tracked title */
+    color:#efeadb;
+    text-shadow:0 0 34px rgba(242,193,78,.16);
+  }
+  .tagline{
+    margin-top:2px;
+    font-size:15px;letter-spacing:.5em;text-transform:uppercase;text-indent:.5em;
+    color:var(--beam);
+  }
+
+  /* the beam — one thin line of light under the title */
+  .beam{
+    margin:34px auto 0;height:1px;width:min(360px,70%);border:0;
+    background:linear-gradient(90deg, transparent, var(--beam) 50%, transparent);
+    box-shadow:0 0 18px 1px rgba(242,193,78,.55);
+    animation:beam-breathe 5s ease-in-out infinite;
+  }
+  @keyframes beam-breathe{
+    0%,100%{opacity:.55}
+    50%{opacity:1}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .beam{animation:none}
+  }
+
+  .lede{
+    margin:34px auto 0;max-width:460px;
+    font-size:20px;color:var(--parchment);
+  }
+  .lede em{color:#efeadb;font-style:normal}
+
+  /* ---- actions ---- */
+  .actions{margin-top:40px;display:flex;flex-direction:column;align-items:center;gap:14px}
+  .btn{
+    display:inline-block;min-width:260px;padding:13px 30px;
+    font-family:Georgia,serif;font-size:13px;letter-spacing:.24em;text-transform:uppercase;
+    border-radius:2px;transition:background .2s,color .2s,box-shadow .2s;
+  }
+  .btn:hover{text-decoration:none}
+  .btn-primary{
+    background:var(--beam);color:#141005;font-weight:700;
+    box-shadow:0 0 26px rgba(242,193,78,.22);
+  }
+  .btn-primary:hover{background:#f7d379;box-shadow:0 0 34px rgba(242,193,78,.35)}
+  .btn-ghost{
+    border:1px solid rgba(216,211,197,.28);color:var(--parchment);
+  }
+  .btn-ghost:hover{border-color:var(--beam);color:var(--beam)}
+
+  /* ---- footer ---- */
+  footer{
+    margin-top:84px;padding-top:26px;
+    border-top:1px solid rgba(216,211,197,.12);
+    font-size:14px;color:var(--muted);
+  }
+  footer a{color:var(--muted)}
+  footer a:hover{color:var(--beam)}
+  .foot-links{margin-bottom:10px}
+  .foot-links a{margin:0 10px}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <img src="keyart.png" alt="Guardpost key art — a lone watchtower casting a beam of light into the night">
+</div>
+
+<main class="wrap">
+  <p class="eyebrow">A night-watch game by KAM Studio</p>
+  <h1>GUARDPOST</h1>
+  <p class="tagline">Survive the Night</p>
+
+  <hr class="beam" aria-hidden="true">
+
+  <p class="lede">Aim your light. Defend the tower. Hold the watch from dusk till dawn — <em>one night at a time</em>.</p>
+
+  <div class="actions">
+    <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.kamstudio.guardpost">Get it on Google Play</a>
+    <a class="btn btn-ghost" href="https://youtu.be/WoywvxQewaw">Watch the trailer</a>
+  </div>
+
+  <footer>
+    <div class="foot-links">
+      <a href="/guardpost/privacy/">Privacy Policy</a> ·
+      <a href="mailto:kamstudio.dev@gmail.com">kamstudio.dev@gmail.com</a> ·
+      <a href="https://kamstudiodev.github.io/">KAM Studio</a>
+    </div>
+    KAM Studio · Guardpost © 2026
+  </footer>
+</main>
+
+</body>
+</html>
