@@ -243,9 +243,10 @@
   }
   .fire-art:hover::after{opacity:1}
   .fire-art:hover img{filter:brightness(1.16) saturate(1.06)}
-  @media (max-width:860px){
+  @media (max-width:720px){
     .fire.lit{flex-wrap:wrap}
     .fire-art{flex:1 1 100%;order:-1;max-width:440px;margin:0 auto 8px}
+    .fire-art.art-below{order:2;margin:22px auto 0}
   }
 
   .actions{margin-top:24px;display:flex;flex-wrap:wrap;gap:12px}
@@ -365,6 +366,10 @@
           <a class="btn btn-fire" href="https://petwalloffame.com/">Visit the Wall</a>
         </div>
       </div>
+      <a class="fire-art art-below" href="https://petwalloffame.com/" aria-label="Pet Wall of Fame resident portraits and keepsakes">
+        <img src="petwall-art.png" loading="lazy"
+             alt="Pet Wall of Fame resident portraits and keepsakes">
+      </a>
     </article>
 
     <article class="fire kindling reveal">
@@ -477,18 +482,19 @@
 
   /* ---------- art tilt ---------- */
   function initTilt(){
-    var art=document.querySelector('.fire-art'); if(!art) return;
-    var img=art.querySelector('img');
-    art.addEventListener('mousemove', function(e){
-      var r=art.getBoundingClientRect(),
-          mx=(e.clientX-r.left)/r.width-.5,
-          my=(e.clientY-r.top)/r.height-.5;
-      img.style.transition='transform .15s ease-out, opacity 1.2s ease .15s, filter .5s';
-      img.style.transform='scale(1.04) rotateY('+(mx*7)+'deg) rotateX('+(-my*7)+'deg)';
-    });
-    art.addEventListener('mouseleave', function(){
-      img.style.transition='transform .8s cubic-bezier(.16,.84,.28,1), opacity 1.2s ease, filter .5s';
-      img.style.transform='scale(1.01)';
+    document.querySelectorAll('.fire-art').forEach(function(art){
+      var img=art.querySelector('img'); if(!img) return;
+      art.addEventListener('mousemove', function(e){
+        var r=art.getBoundingClientRect(),
+            mx=(e.clientX-r.left)/r.width-.5,
+            my=(e.clientY-r.top)/r.height-.5;
+        img.style.transition='transform .15s ease-out, opacity 1.2s ease .15s, filter .5s';
+        img.style.transform='scale(1.04) rotateY('+(mx*7)+'deg) rotateX('+(-my*7)+'deg)';
+      });
+      art.addEventListener('mouseleave', function(){
+        img.style.transition='transform .8s cubic-bezier(.16,.84,.28,1), opacity 1.2s ease, filter .5s';
+        img.style.transform='scale(1.01)';
+      });
     });
   }
 
