@@ -273,6 +273,31 @@
   .foot-links a{margin:0 12px}
   .colophon{color:var(--ash);font-size:15px}
 
+  /* ================= NAVIGATION & FOOTER SUPPORT ================= */
+  .top-nav{
+    position:absolute;top:clamp(20px,3.5vh,36px);right:clamp(20px,4vw,52px);
+    z-index:10;display:flex;align-items:center;
+  }
+  .nav-link{
+    color:var(--ash);font-size:11px;letter-spacing:.32em;text-transform:uppercase;
+    transition:color .25s ease,text-shadow .25s ease;padding:6px 10px;
+  }
+  .nav-link:hover{
+    color:var(--gold);text-decoration:none;
+    text-shadow:0 0 14px rgba(242,169,80,.4);
+  }
+  .foot-support{
+    max-width:540px;margin:0 auto 48px;padding-bottom:42px;
+    border-bottom:1px solid var(--line);
+  }
+  .foot-support-title{
+    color:var(--flame-hi);margin-bottom:12px;
+  }
+  .foot-support-text{
+    color:var(--ash);font-size:18px;line-height:1.6;font-style:italic;
+    margin:0 auto 24px;max-width:480px;
+  }
+
   /* ================= REDUCED MOTION ================= */
   @media (prefers-reduced-motion:reduce){
     body::before{animation:none}
@@ -299,6 +324,9 @@
 <div id="wick" aria-hidden="true"><div class="rope"></div><div class="charred"></div><div class="tip"></div></div>
 
 <header class="hero">
+  <nav class="top-nav" aria-label="Site navigation">
+    <a class="nav-link caps" href="https://buymeacoffee.com/cagrikacmaz" target="_blank" rel="noopener noreferrer">Support</a>
+  </nav>
   <div class="hero-media"><img class="hero-banner" src="banner.png"
        alt="A horned watcher stands by a campfire under a rising moon — KAM Studio: where the old fires still burn."></div>
   <div class="hero-logo">
@@ -388,6 +416,11 @@
 </main>
 
 <footer>
+  <div class="foot-support">
+    <div class="caps foot-support-title">Support independent experiments</div>
+    <p class="foot-support-text">I share selected software, AI and product experiments publicly. If you find the work useful, you can support future experiments here.</p>
+    <a class="btn btn-quiet" href="https://buymeacoffee.com/cagrikacmaz" target="_blank" rel="noopener noreferrer">Support on Buy Me a Coffee</a>
+  </div>
   <img src="logo.png" alt="" aria-hidden="true">
   <div class="foot-links">
     <a href="mailto:kamstudio.dev@gmail.com">kamstudio.dev@gmail.com</a> ·
