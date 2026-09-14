@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pet Wall of Fame | KAM Studio</title>
+<meta name="description" content="Pet Wall of Fame by KAM Studio. A permanent, public celebration of beloved pets worldwide.">
+<meta property="og:title" content="Pet Wall of Fame | KAM Studio">
+<meta property="og:description" content="A permanent, public celebration of beloved pets worldwide. By KAM Studio.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kamstudio.app/petwall/">
+<meta property="og:image" content="https://kamstudio.app/petwall/keyart.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:#080a07;
+    --panel:#111510;
+    --flame-hi:#f2a950;
+    --flame:#cf8434;
+    --gold:#d9b877;
+    --parchment:#ece4d0;
+    --muted:#8d927e;
+    --line:rgba(217,184,119,.16);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--night);
+    color:var(--parchment);
+    font-family:"Cormorant Garamond",Georgia,serif;
+    font-size:19px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--gold);text-decoration:none}
+  a:hover{text-decoration:underline}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+
+  .nav-bar{
+    padding:24px 28px 0;max-width:860px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;
+  }
+  .nav-link{
+    font-family:Georgia,serif;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);
+  }
+  .nav-link:hover{color:var(--gold);text-decoration:none}
+
+  /* ---- hero ---- */
+  .hero{position:relative;overflow:hidden;margin-top:14px}
+  .hero img{
+    display:block;width:100%;max-height:52vh;object-fit:cover;object-position:center;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(to bottom, rgba(8,10,7,.1) 0%, rgba(8,10,7,0) 30%, rgba(8,10,7,.65) 75%, var(--night) 100%);
+    pointer-events:none;
+  }
+
+  /* ---- content ---- */
+  .wrap{max-width:680px;margin:0 auto;padding:0 24px 72px;text-align:center}
+  .eyebrow{
+    margin-top:40px;
+    font-size:12px;letter-spacing:.42em;text-transform:uppercase;
+    color:var(--muted);font-family:Georgia,serif;
+  }
+  h1{
+    margin-top:14px;
+    font-weight:500;
+    font-size:clamp(32px,6.5vw,56px);
+    letter-spacing:.18em;
+    color:#f4edda;
+    line-height:1.2;
+    text-shadow:0 0 30px rgba(242,169,80,.18);
+  }
+  .tagline{
+    margin-top:8px;
+    font-size:14px;letter-spacing:.45em;text-transform:uppercase;
+    color:var(--flame-hi);font-family:Georgia,serif;
+  }
+
+  /* thin line of light */
+  .beam{
+    margin:32px auto 0;height:1px;width:min(360px,70%);border:0;
+    background:linear-gradient(90deg, transparent, var(--flame-hi) 50%, transparent);
+    box-shadow:0 0 16px 1px rgba(242,169,80,.5);
+  }
+
+  .lede{
+    margin:32px auto 0;max-width:580px;
+    font-size:20px;color:var(--parchment);text-align:center;
+  }
+  .lede b{color:#ffffff;font-weight:600}
+
+  /* ---- actions ---- */
+  .actions{margin-top:36px;display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+  .btn{
+    display:inline-block;min-width:260px;padding:13px 28px;
+    font-family:Georgia,serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    border-radius:2px;transition:background .2s,color .2s,box-shadow .2s,border-color .2s;
+  }
+  .btn:hover{text-decoration:none}
+  .btn-primary{
+    background:linear-gradient(to bottom,var(--flame-hi),var(--flame));color:#141005;font-weight:700;
+    box-shadow:0 0 22px rgba(242,169,80,.26);
+  }
+  .btn-primary:hover{box-shadow:0 0 32px rgba(242,169,80,.45);color:#0a0803}
+  .btn-ghost{
+    border:1px solid var(--line);color:var(--parchment);
+  }
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+
+  /* ---- details section ---- */
+  .section-block{
+    margin-top:54px;text-align:left;padding:32px;
+    background:rgba(17,21,16,.65);border:1px solid var(--line);border-radius:4px;
+  }
+  h2{
+    font-size:22px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--flame-hi);margin-bottom:18px;
+  }
+  .feature-list{list-style:none;margin:0;padding:0}
+  .feature-list li{
+    margin-bottom:14px;padding-left:24px;position:relative;color:var(--parchment);font-size:18px;
+  }
+  .feature-list li::before{
+    content:"•";position:absolute;left:4px;color:var(--gold);font-size:20px;line-height:1;
+  }
+  .feature-list li b{color:#ffffff;font-weight:600}
+
+  /* ---- pricing box ---- */
+  .price-box{
+    background:rgba(8,10,7,.75);border:1px solid rgba(242,169,80,.45);padding:24px;border-radius:3px;
+    box-shadow:0 0 20px rgba(242,169,80,.12);margin-top:18px;
+  }
+  .price-amount{
+    font-size:34px;color:var(--flame-hi);margin-bottom:8px;font-weight:600;
+  }
+  .price-meta{
+    font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-family:Georgia,serif;
+    margin-bottom:12px;
+  }
+
+  .text-block{color:var(--parchment);font-size:18px;line-height:1.65}
+  .text-block p{margin-bottom:12px}
+  .text-block p:last-child{margin-bottom:0}
+
+  .policy-box{
+    margin-top:40px;padding:22px 26px;border-left:3px solid var(--flame);
+    background:rgba(17,21,16,.85);font-size:17px;color:var(--parchment);text-align:left;
+  }
+  .policy-box b{color:#ffffff}
+
+  /* ---- footer ---- */
+  footer{
+    margin-top:72px;padding-top:30px;
+    border-top:1px solid var(--line);
+    font-size:14px;color:var(--muted);text-align:center;
+  }
+  footer a{color:var(--muted)}
+  footer a:hover{color:var(--gold)}
+  .foot-links{margin-bottom:12px}
+  .foot-links a{margin:0 10px}
+</style>
+</head>
+<body>
+
+<nav class="nav-bar" aria-label="Breadcrumb">
+  <a class="nav-link" href="/">← KAM Studio</a>
+  <a class="nav-link" href="https://petwalloffame.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+</nav>
+
+<div class="hero">
+  <img src="keyart.png" alt="Pet Wall of Fame resident portraits and keepsake artifacts">
+</div>
+
+<main class="wrap">
+  <p class="eyebrow">A website by KAM Studio</p>
+  <h1>PET WALL OF FAME</h1>
+  <p class="tagline">Where beloved pets live forever</p>
+
+  <hr class="beam" aria-hidden="true">
+
+  <p class="lede">
+    Pet Wall of Fame is a website running on <b>petwalloffame.com</b>, where the purchase and enrollment happen. It creates a single, permanent public wall celebrating beloved pets across the world, ensuring their memory does not disappear in social feeds.
+  </p>
+
+  <div class="actions">
+    <a class="btn btn-primary" href="https://petwalloffame.com/">Visit petwalloffame.com ($5)</a>
+    <a class="btn btn-ghost" href="https://petwalloffame.com/memorial" target="_blank" rel="noopener noreferrer">Memorial mode</a>
+  </div>
+
+  <section class="section-block">
+    <h2>Features</h2>
+    <ul class="feature-list">
+      <li><b>Permanent place on the Wall:</b> Your pet's portrait, name, and personal memory are enshrined forever on the public gallery.</li>
+      <li><b>Unique Resident Number:</b> Every pet receives a sequential Resident Number permanently identifying their place on the wall.</li>
+      <li><b>Dedicated public pet page:</b> A shareable webpage with photo, species, story, and permanent permalink.</li>
+      <li><b>Loving memorial mode:</b> Gentle tribute options available for pets who have crossed the rainbow bridge.</li>
+      <li><b>Zero recurring fees:</b> Built to stay accessible without accounts, renewal fees, or ongoing upkeep.</li>
+    </ul>
+  </section>
+
+  <section class="section-block">
+    <h2>Price</h2>
+    <div class="price-box">
+      <div class="price-amount">$5</div>
+      <div class="price-meta">One-time payment</div>
+      <p class="text-block">A permanent Resident place. There is no subscription, no recurring charge, and the place never expires.</p>
+    </div>
+  </section>
+
+  <section class="section-block">
+    <h2>What you get after purchase</h2>
+    <div class="text-block">
+      <p>Delivery is digital and instant upon completing checkout on petwalloffame.com:</p>
+      <ul class="feature-list" style="margin-top:10px">
+        <li><b>A sequential Resident Number</b> assigned forever on the global wall.</li>
+        <li><b>A permanent public webpage</b> dedicated to your pet.</li>
+        <li><b>A high-resolution certificate PDF</b>, personalized and ready to print or frame.</li>
+        <li><b>A social share card and phone wallpaper</b> celebrating your pet.</li>
+        <li><b>A story-matched soundtrack</b> paired with your pet's tribute.</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="policy-box">
+    <b>Refund Policy:</b> These are digital products. If the product does not work for you and we cannot fix it, email <a href="mailto:support@kamstudio.app">support@kamstudio.app</a> within 14 days of purchase and we will refund you.
+  </div>
+
+  <div class="policy-box" style="margin-top:16px">
+    <b>Support &amp; Privacy:</b> Questions or feedback can be sent directly to <a href="mailto:support@kamstudio.app">support@kamstudio.app</a>. Review the <a href="https://petwalloffame.com/privacy" target="_blank" rel="noopener noreferrer">Pet Wall of Fame Privacy Policy</a>.
+  </div>
+
+  <footer>
+    <div class="foot-links">
+      <a href="/">KAM Studio</a> ·
+      <a href="https://petwalloffame.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a> ·
+      <a href="mailto:support@kamstudio.app">support@kamstudio.app</a>
+    </div>
+    KAM Studio © 2026 · Where the old fires still burn.
+  </footer>
+</main>
+
+</body>
+</html>
