@@ -1,2 +1,2 @@
-# kamstudiodev.github.io
-KAM Studio — legal &amp; policy page
+# kamstudio.app
+KAM Studio — official studio site and product portfolio

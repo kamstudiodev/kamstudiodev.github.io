@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy policy - Perplexity Bulk Delete &amp; Export</title>
+    <meta name="description" content="Privacy policy for Perplexity Bulk Delete &amp; Export." />
+    <!--
+      Generated from PRIVACY.md by scripts/build-privacy.mjs. Do not edit by hand:
+      change the Markdown and run `pnpm privacy`.
+    -->
+    <style>
+      :root {
+        color-scheme: light dark;
+
+        --surface: #ffffff;
+        --raised: #fafafa;
+        --sunken: #f4f4f5;
+        --line: #e7e7ea;
+
+        --ink: #18181b;
+        --ink-muted: #52525b;
+        --ink-faint: #71717a;
+
+        --accent: #f59e0b;
+        --accent-text: #b45309;
+        --focus: #b45309;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --surface: #141416;
+          --raised: #1b1b1e;
+          --sunken: #202023;
+          --line: #2a2a2e;
+
+          --ink: #ededf0;
+          --ink-muted: #a1a1aa;
+          --ink-faint: #8b8b93;
+
+          --accent-text: #fbbf24;
+          --focus: #f59e0b;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--sunken);
+        color: var(--ink);
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        font-size: 16px;
+        line-height: 1.65;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      main {
+        max-width: 46rem;
+        margin: 0 auto;
+        padding: 2.5rem 1.25rem 4rem;
+      }
+
+      /* The one accent mark on the page, echoing the panel's amber. */
+      header {
+        border-left: 3px solid var(--accent);
+        padding-left: 1rem;
+        margin-bottom: 2.5rem;
+      }
+
+      h1 {
+        font-size: 1.75rem;
+        line-height: 1.25;
+        margin: 0 0 0.5rem;
+        letter-spacing: -0.01em;
+      }
+
+      header p {
+        margin: 0;
+        color: var(--ink-muted);
+        font-size: 0.9375rem;
+      }
+
+      h2 {
+        font-size: 1.125rem;
+        margin: 2.5rem 0 0.75rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--line);
+        letter-spacing: -0.005em;
+      }
+
+      p {
+        margin: 0 0 1rem;
+      }
+
+      a {
+        color: var(--accent-text);
+        text-decoration-thickness: 1px;
+        text-underline-offset: 2px;
+        overflow-wrap: anywhere;
+      }
+
+      a:focus-visible {
+        outline: 2px solid var(--focus);
+        outline-offset: 2px;
+        border-radius: 2px;
+      }
+
+      /* The summary, lifted out of the flow the way the panel raises a banner. */
+      .lede {
+        background: var(--raised);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 1.125rem 1.25rem;
+      }
+
+      .lede p:last-child,
+      footer p:last-child {
+        margin-bottom: 0;
+      }
+
+      .note {
+        color: var(--ink-muted);
+        font-size: 0.9375rem;
+      }
+
+      footer {
+        margin-top: 3rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--line);
+        color: var(--ink-faint);
+        font-size: 0.875rem;
+      }
+
+      @media (max-width: 30rem) {
+        main {
+          padding: 1.75rem 1rem 3rem;
+        }
+        h1 {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Privacy policy</h1>
+        <p>Perplexity Bulk Delete &amp; Export, by KAM Studio. Last updated: 3 September 2026.</p>
+      </header>
+
+      <h2>The short version</h2>
+      <div class="lede">
+        <p>Your threads never leave your browser. There is no account, no server that stores anything about you, and no analytics. Only two kinds of request ever leave the extension: a licence check, if you enter a Pro key, and anonymous reads of our public settings, which tell it the site addresses to use and the text of the card shown on the free plan. Neither carries anything about you or your threads.</p>
+      </div>
+
+      <h2>What the extension reads</h2>
+      <p>When you press Scan, the extension reads the list of threads in your own Perplexity library: titles, dates, snippets and collection names. When you export, it also reads the messages in the threads you selected.</p>
+      <p>All of that stays in your browser's local extension storage. It is used to draw the table, to build your export file, and to remember where a delete run had got to if the browser restarts it. It is never uploaded anywhere.</p>
+      <p>You can erase all of it at any time by removing the extension, which deletes its storage with it.</p>
+
+      <h2>How it reaches Perplexity</h2>
+      <p>The extension does not sign in to Perplexity and never sees your password. It works through the Perplexity tab you already have open, using the session you are already signed in with, in the same way the site's own pages do. It stores no token and no cookie. Everything it does is something you could do yourself by clicking around the site.</p>
+
+      <h2>What leaves your browser</h2>
+      <p>Two kinds of request, and neither is about you.</p>
+      <p><strong>1. Licence check.</strong> If you buy Pro and enter a licence key, that key is sent to Polar (polar.sh), our payment provider, so it can confirm the key is valid. It is re-checked about every three days. The request contains the licence key and a label naming your operating system, for example &quot;BulkKit (Windows)&quot;, so you can recognise the device in your own Polar account. It contains nothing about your threads. If you never enter a key, this request never happens. Polar's own privacy policy covers what they do with it: <a href="https://polar.sh/legal/privacy" rel="noopener noreferrer">https://polar.sh/legal/privacy</a></p>
+      <p><strong>2. Public settings.</strong> The extension reads two small public tables from our Supabase project. One holds the site addresses it should use, which lets us fix the extension quickly if Perplexity changes something instead of waiting for a store review. The other holds the text of the card shown on the free plan. Both are anonymous reads, the same content for everybody, and they send nothing: no identifier, no usage data, not even a count. Both contain configuration values only, which are checked before use and never run as code.</p>
+      <p class="note">These reads are switched off in the current release, so today the licence check is the only request that leaves the extension at all. They are described here because the extension is built to make them and a later release may switch them on.</p>
+
+      <h2>Downloads</h2>
+      <p>Export files are written by your browser to your own computer, to wherever your browser puts downloads. They do not pass through us.</p>
+
+      <h2>Capture mode</h2>
+      <p>There is a diagnostic mode, off by default, that records the <em>shape</em> of the requests the extension makes so we can correct it when a site changes: the address path, the method, the names of the headers, and a skeleton of each response where every value is replaced by its type. Header values, search terms, thread titles and message text are never recorded.</p>
+      <p>Even then, the result is saved as a file on your own computer. It is uploaded nowhere. It reaches us only if you choose to send it to us yourself.</p>
+
+      <h2>Advertising</h2>
+      <p>On the free plan the panel shows one small card for another KAM Studio product. It is plain text and a link, loaded from the public settings above. There is no ad network, no third-party script, no iframe and no tracking pixel, and nothing about you is used to choose it. You can switch it off in the panel's Plan tab, and Pro removes it.</p>
+
+      <h2>Children</h2>
+      <p>The extension is not directed at children and collects no data from anyone.</p>
+
+      <h2>Changes</h2>
+      <p>If this policy changes in a way that affects what leaves your browser, the change will be described in the extension's release notes, not only here.</p>
+
+      <h2>Contact</h2>
+      <p>Questions about this policy: <a href="mailto:cagri@dijitalguru.com">cagri@dijitalguru.com</a></p>
+
+      <footer>
+        <p>KAM Studio is not affiliated with, endorsed by, or connected to Perplexity AI.</p>
+      </footer>
+    </main>
+  </body>
+</html>
